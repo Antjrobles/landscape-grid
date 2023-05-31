@@ -49,7 +49,27 @@ function createCard(photo) {
 
   const author = document.createElement('author');
   author.innerText = photo.photographer;
+  console.log(author);
+
+  author.innerHTML = author.innerHTML === 'Pixabay' ? 'Stefan Keller' :
+                  author.innerHTML === 'Nextvoyage' ? 'Antonio Robles' :
+                  author.innerHTML === 'katja' ? 'Katja Salenko' :
+                  author.innerHTML === 'Baskin Creative Studios' ? 'Mario Baskin' :
+                  author.innerHTML;
+
+  // if(author.innerHTML === 'Pixabay') {
+  //   author.innerText = 'Stefan Keller';
+  // }
+  // if(author.innerHTML === 'Nextvoyage') {
+  //   author.innerText = 'Antonio Robles';
+  // }
+  // if(author.innerHTML === 'katja') {
+  //   author.innerText = 'Katja Salenko';
+  // }
+
+
   text.appendChild(author);
+
 
   card.appendChild(front);
   card.appendChild(back);
