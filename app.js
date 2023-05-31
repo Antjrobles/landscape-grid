@@ -1,64 +1,63 @@
 const btnEl = document.getElementById('btn');
-const cards = document.querySelector('.cards');
-const cardFront = document.querySelector('.front');
-const cardBack = document.querySelector('.back');
-
-
+const cardsContainer = document.querySelector('.grid');
 
 async function fetchImages() {
-  
-  cards.addEventListener('click', () => {
-    cards.classList.toggle('flip');
-  });
-  
-  const perPage = 1;
-  try {
-    resetGallery();
+  cardsContainer.innerHTML = ''; // Limpiar el contenido existente
 
+  const perPage = 12; // Cambia el valor de perPage según tus necesidades
+
+  try {
     const response = await fetch(
       `https://api.pexels.com/v1/search?query=landscapes&per_page=${perPage}`,
       {
         headers: {
-          Authorization:
-            'F5RU35VJ0hiSHmLcbiwhy9S5IjzIyJuDWByJRt2kwXs6qEY31oE9i955',
+          Authorization: 'F5RU35VJ0hiSHmLcbiwhy9S5IjzIyJuDWByJRt2kwXs6qEY31oE9i955',
         },
       }
     );
     const data = await response.json();
     const photos = data.photos;
-    // shuffle(photos);
-
-    const pictures = photos.map((photo) => {
-      const imgElement = document.createElement('img');
-      imgElement.src = photo.src.medium;
-      return imgElement;
-    });
-
-    const text = photos.map((alt) => {
-      const textElement = document.createElement('textBack');
-      textElement.innerText = alt.alt;
-      console.log(textElement);
-      return textElement;
-    });
+    shuffle(photos);
 
 
-text.forEach((text) => {
-  cardBack.appendChild(text);
-});
-
-
-
-    pictures.forEach((picture) => {
-      cardFront.appendChild(picture);
+    photos.forEach((photo) => {
+      const card = createCard(photo);
+      cardsContainer.appendChild(card);
     });
   } catch (error) {
     console.log(error);
   }
+}
 
-  function resetGallery() {
-    cardFront.innerHTML = '';
-  }
-};
+function createCard(photo) {
+  const card = document.createElement('div');
+  card.classList.add('cards');
+
+  const front = document.createElement('div');
+  front.classList.add('front');
+
+  const img = document.createElement('img');
+  img.src = photo.src.medium;
+  front.appendChild(img);
+
+  const back = document.createElement('div');
+  back.classList.add('back');
+
+  const text = document.createElement('textBack');
+  text.innerText = photo.alt;
+  back.appendChild(text);
+
+  card.appendChild(front);
+  card.appendChild(back);
+
+  card.addEventListener('click', () => {
+    card.classList.toggle('flip');
+  });
+
+  return card;
+}
+
+
 
 function shuffle(array) {
   let currentIndex = array.length,
@@ -76,4 +75,3 @@ function shuffle(array) {
 }
 
 btnEl.addEventListener('click', fetchImages);
-
