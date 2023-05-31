@@ -1,10 +1,17 @@
 const btnEl = document.getElementById('btn');
-const cards = document.getElementById('cards');
+const cards = document.querySelector('.cards');
+const cardFront = document.querySelector('.front');
+const cardBack = document.querySelector('.back');
 
 
 
 async function fetchImages() {
-  const perPage = 6;
+  
+  cards.addEventListener('click', () => {
+    cards.classList.toggle('flip');
+  });
+  
+  const perPage = 1;
   try {
     resetGallery();
 
@@ -17,37 +24,41 @@ async function fetchImages() {
         },
       }
     );
-
     const data = await response.json();
     const photos = data.photos;
-
-    shuffle(photos);
+    // shuffle(photos);
 
     const pictures = photos.map((photo) => {
       const imgElement = document.createElement('img');
       imgElement.src = photo.src.medium;
-
       return imgElement;
     });
 
-    pictures.forEach((picture) => {
-      cards.appendChild(picture);
+    const text = photos.map((alt) => {
+      const textElement = document.createElement('textBack');
+      textElement.innerText = alt.alt;
+      console.log(textElement);
+      return textElement;
     });
 
 
+text.forEach((text) => {
+  cardBack.appendChild(text);
+});
 
+
+
+    pictures.forEach((picture) => {
+      cardFront.appendChild(picture);
+    });
   } catch (error) {
     console.log(error);
   }
 
   function resetGallery() {
-    cards.innerHTML = '';
+    cardFront.innerHTML = '';
   }
 };
-
-
-
-
 
 function shuffle(array) {
   let currentIndex = array.length,
