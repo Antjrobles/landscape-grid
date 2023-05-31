@@ -5,7 +5,7 @@ async function fetchImages() {
   cardsContainer.innerHTML = ''; // Limpiar el contenido existente
 
   const perPage = 12; // Cambia el valor de perPage según tus necesidades
-
+  
   try {
     const response = await fetch(
       `https://api.pexels.com/v1/search?query=landscapes&per_page=${perPage}`,
@@ -46,6 +46,10 @@ function createCard(photo) {
   const text = document.createElement('textBack');
   text.innerText = photo.alt;
   back.appendChild(text);
+
+  const author = document.createElement('author');
+  author.innerText = photo.photographer;
+  text.appendChild(author);
 
   card.appendChild(front);
   card.appendChild(back);
