@@ -16,7 +16,11 @@ body {
   padding: 0;
   height: 100vh; /* Establece la altura al 100% del viewport */
   /* overflow-y: hidden; */
-  background-image: linear-gradient(to right bottom, rgba(8, 181, 238, 0.7), rgba(4, 82, 110, 0.7)),
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(8, 181, 238, 0.7),
+      rgba(4, 82, 110, 0.7)
+    ),
     url('https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-size: cover;
   background-repeat: no-repeat;
@@ -171,6 +175,67 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
+
+
+/* SELECT NUMBER OF IMAGES */
+.places {
+  font-family: 'Exo 2';
+  color: white;
+  font-weight: 300;
+  letter-spacing: 10px;
+}
+
+.hidden {
+  display: none;
+ 
+}
+
+@keyframes showSelect {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.showSelect {
+  animation: showSelect 5s ease forwards;
+}
+
+#btn-select {
+  width: 3rem;
+  height: 2rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button
+ {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  background: transparent;
+  color: black;
+  width: 2rem;
+  height: 2rem;
+}
+
+
+input {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.hidden__btns {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
 
 /* CARDS */
 
