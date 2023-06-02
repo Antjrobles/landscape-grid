@@ -16,11 +16,7 @@ body {
   padding: 0;
   height: 100vh; /* Establece la altura al 100% del viewport */
   /* overflow-y: hidden; */
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(8, 181, 238, 0.7),
-      rgba(4, 82, 110, 0.7)
-    ),
+  background-image: linear-gradient(to right bottom, rgba(8, 181, 238, 0.7), rgba(4, 82, 110, 0.7)),
     url('https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-size: cover;
   background-repeat: no-repeat;
@@ -117,16 +113,15 @@ body {
 
 /* MAIN */
 @keyframes slideDown {
-
-0% {
-  opacity: 0;
-}
-80% {
-  opacity: 0.7;
-  transform: translateY(5%);
-}
-100% {
-  opacity: 1;
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
     transform: translateY(0);
   }
 }
@@ -134,9 +129,9 @@ body {
   overflow: hidden;
 }
 
-  .container__header {
-    color: white;
-    text-transform: uppercase;
+.container__header {
+  color: white;
+  text-transform: uppercase;
   font-family: 'Exo 2', sans-serif;
   font-size: 5rem;
   transform: translateY(-100%);
@@ -150,10 +145,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-title {
-  transform: translateY(-100%);
 }
 
 .btn {
@@ -172,7 +163,7 @@ title {
 .btn:hover {
   color: aliceblue;
   cursor: pointer;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   transform: translateY(-3px);
 }
 
