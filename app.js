@@ -123,11 +123,17 @@ function shuffle(array) {
 }
 
 // SEARCH INPUT
-inputField.addEventListener('keyup', (e) => {
-  const inputText = e.target.value;
-  fetchSearchImages(inputText);
-});
 
+let timeoutId;
+inputField.addEventListener('keyup', (e) => {
+
+  clearTimeout(timeoutId); // Reiniciar el temporizador en cada pulsación de tecla
+
+  const inputText = e.target.value;
+  timeoutId = setTimeout(() => {
+  fetchSearchImages(inputText);
+}, 700);
+});
 
 
 //fetchSearchImages
