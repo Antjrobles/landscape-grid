@@ -128,6 +128,8 @@ inputField.addEventListener('keyup', (e) => {
   fetchSearchImages(inputText);
 });
 
+
+
 //fetchSearchImages
 async function fetchSearchImages(inputText) {
   cardsContainer.innerHTML = ''; // Limpiar el contenido existente
