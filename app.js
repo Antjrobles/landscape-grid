@@ -124,7 +124,9 @@ function shuffle(array) {
 
 // SEARCH INPUT
 
-let timeoutId;
+let timeoutId; // Variable para almacenar el ID del temporizador
+
+
 inputField.addEventListener('keyup', (e) => {
 
   clearTimeout(timeoutId); // Reiniciar el temporizador en cada pulsación de tecla

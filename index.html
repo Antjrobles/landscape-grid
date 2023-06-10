@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 
   <title>Live & Travel</title>
@@ -21,10 +21,10 @@
       Search
       <svg width="17" height="17" viewBox="1 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
-          d="M7.79167 13.4583C10.9213 13.4583 13.4583 10.9213 13.4583 7.79167C13.4583 4.66205 10.9213 2.125 7.79167 2.125C4.66205 2.125 2.125 4.66205 2.125 7.79167C2.125 10.9213 4.66205 13.4583 7.79167 13.4583Z"
-          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              d="M7.79167 13.4583C10.9213 13.4583 13.4583 10.9213 13.4583 7.79167C13.4583 4.66205 10.9213 2.125 7.79167 2.125C4.66205 2.125 2.125 4.66205 2.125 7.79167C2.125 10.9213 4.66205 13.4583 7.79167 13.4583Z"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M14.875 14.875L11.7938 11.7938" stroke="white" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" />
+              stroke-linejoin="round" />
       </svg>
     </button>
   </div>
@@ -50,7 +50,7 @@
       <div class="hidden">
         <h3 class="places">Dream, Explore, Repeat: How Many?</h3>
         <div class="hidden__btns">
-          <input type="number"  id="desired-number" placeholder="desired number...">
+          <input type="number" id="desired-number" placeholder="desired number...">
           <button onclick="getSelectedNumber()" class="btn" id="btn-select">
             Go!
           </button>
@@ -65,8 +65,25 @@
       <div class="back"></div>
     </div>
   </section>
+
   <script src="app.js"></script>
 
 </body>
+
+
+<!-- PAGINATION -->
+
+<nav class="pagination">
+  <button class="pagination-button" id="prev" title="Previous page" aria-label="Previous page">
+    &lt;
+  </button>
+  
+  <div id="pagination-numbers">
+  </div>
+  
+  <button class="pagination-button" id="next" title="Next page" aria-label="Next page">
+    &gt;
+  </button>
+</nav>
 
 </html>
